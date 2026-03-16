@@ -3,13 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>로또 번호 추천기</title>
-  <link href='/style.css' rel='stylesheet'>
+  <title>Premium Lotto Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
 </head>
 <body>
-  <h1>로또 번호 추천기</h1>
-  <button id="generate">번호 추천 받기 (6세트)</button>
-  <div id="numbers"></div>
-  <script defer type="text/javascript" src="/main.js"></script>
+  <div class="container">
+    <header>
+      <h1>LOTTO <span>PREMIUM</span></h1>
+      <p>가장 높은 확률의 번호를 조합해 보세요</p>
+    </header>
+    
+    <div class="action-area">
+      <button id="generate">
+        <span class="btn-text">번호 추천 받기 (6세트)</span>
+        <span class="btn-shine"></span>
+      </button>
+    </div>
+
+    <div id="numbers" class="numbers-grid"></div>
+  </div>
+  
+  <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
