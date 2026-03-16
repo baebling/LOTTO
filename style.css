@@ -4,7 +4,8 @@
   --bg: #0f172a;
   --card-bg: rgba(255, 255, 255, 0.05);
   --text: #f8fafc;
-  --accent: #fbbf24;
+  --accent-gold: #fbbf24;
+  --accent-blue: #38bdf8;
 }
 
 * {
@@ -53,32 +54,49 @@ header p {
   font-size: 1.1rem;
 }
 
-/* 오늘의 운세 스타일 */
-.fortune-card {
-  background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(217, 70, 239, 0.1));
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(251, 191, 36, 0.3);
-  border-radius: 20px;
-  padding: 24px;
+/* 카드 래퍼 및 공통 스타일 */
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
   margin-bottom: 30px;
+}
+
+.info-card {
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 20px;
   text-align: center;
   animation: fadeIn 0.8s ease-out;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.fortune-title {
-  color: var(--accent);
+.fortune-card {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(217, 70, 239, 0.1));
+  border-color: rgba(251, 191, 36, 0.3);
+}
+
+.lunch-card {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(34, 197, 94, 0.1));
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.card-title {
   font-weight: 800;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
-.fortune-content {
-  font-size: 1.3rem;
+.fortune-card .card-title { color: var(--accent-gold); }
+.lunch-card .card-title { color: var(--accent-blue); }
+
+.card-content {
+  font-size: 1.15rem;
   font-weight: 600;
   color: #fff;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 @keyframes fadeIn {
@@ -178,7 +196,8 @@ button:hover .btn-shine {
 
 @media (max-width: 600px) {
   h1 { font-size: 2.2rem; }
-  .fortune-content { font-size: 1.1rem; }
+  .cards-wrapper { grid-template-columns: 1fr; }
+  .card-content { font-size: 1.05rem; }
   .number-set {
     padding: 16px;
     gap: 10px;
