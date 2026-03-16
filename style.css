@@ -24,11 +24,51 @@ body {
   min-height: 100vh;
   padding: 40px 20px;
   line-height: 1.5;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* 네잎클로버 배경 스타일 */
+.clover-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.clover {
+  position: absolute;
+  font-size: 24px;
+  opacity: 0.3;
+  animation: float linear infinite;
+  user-select: none;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(110vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-10vh) translateX(100px) rotate(360deg);
+    opacity: 0;
+  }
 }
 
 .container {
   max-width: 800px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 header {
@@ -54,7 +94,6 @@ header p {
   font-size: 1.1rem;
 }
 
-/* 카드 래퍼 및 공통 스타일 */
 .cards-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;

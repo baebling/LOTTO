@@ -5,6 +5,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const fortuneText = document.getElementById('fortune-text');
   const lunchContainer = document.getElementById('lunch-container');
   const lunchText = document.getElementById('lunch-text');
+  const cloverContainer = document.getElementById('clover-container');
+
+  // 네잎클로버 생성 함수
+  function createClover() {
+    const clover = document.createElement('div');
+    clover.classList.add('clover');
+    clover.innerHTML = '🍀';
+    clover.style.left = Math.random() * 100 + 'vw';
+    clover.style.animationDuration = Math.random() * 5 + 5 + 's'; // 5~10초 사이
+    clover.style.fontSize = Math.random() * 20 + 15 + 'px'; // 15~35px 사이
+    
+    cloverContainer.appendChild(clover);
+
+    // 애니메이션 종료 후 제거
+    setTimeout(() => {
+      clover.remove();
+    }, 10000);
+  }
+
+  // 주기적으로 클로버 생성
+  setInterval(createClover, 500);
 
   const fortunes = [
     "오늘은 금전운이 매우 좋은 날입니다! 자신감을 가지세요.",
@@ -20,20 +41,15 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   const lunchMenus = [
-    // 한식 (30)
     "김치찌개", "된장찌개", "비빔밥", "불고기", "제육볶음", "보쌈정식", "족발", "물냉면", "비빔냉면", "칼국수",
     "수제비", "떡볶이와 튀김", "김밥과 라면", "순대국밥", "뼈해장국", "갈비탕", "삼계탕", "육개장", "청국장", "콩나물국밥",
     "돌솥비빔밥", "잡채밥", "오징어볶음", "닭갈비", "부대찌개", "낙지볶음", "고등어구이", "갈치조림", "아구찜", "해물파전",
-    // 일식 (20)
     "모듬 초밥", "돈코츠 라멘", "미소 라멘", "등심 돈카츠", "안심 돈카츠", "규동", "가츠동", "에비텐동", "사누끼 우동", "판모밀",
     "연어 덮밥(사케동)", "야키소바", "오코노미야키", "회덮밥", "장어 덮밥", "일본식 카레라이스", "에비후라이 카레", "치킨 가라아게동", "지라시 스시", "나가사키 짬뽕",
-    // 중식 (20)
     "짜장면", "해물 짬뽕", "찹쌀 탕수육", "계란 볶음밥", "마파두부밥", "양장피", "팔보채", "유산슬", "깐풍기", "라조기",
     "멘보샤", "마라탕", "마라상궈", "꿔바로우", "울면", "잡탕밥", "고추잡채와 꽃빵", "샤오롱바오", "탄탄면", "우육면",
-    // 양식/이탈리안 (20)
     "까르보나라", "알리오올리오", "해산물 토마토 파스타", "봉골레 파스타", "매콤 로제 파스타", "고르곤졸라 피자", "마르게리따 피자", "페퍼로니 피자", "안심 스테이크", "함박 스테이크",
     "버섯 크림 리조또", "치즈 라자냐", "바질 뇨끼", "감바스 알 아히요", "에그인헬", "시저 샐러드", "치즈 베이컨 수제버거", "클럽 샌드위치", "반숙 오므라이스", "피쉬앤칩스",
-    // 기타/퓨전 (10)
     "소고기 쌀국수", "분짜", "팟타이", "푸팟퐁커리", "나시고랭", "미고랭", "쉬림프 타코", "치킨 퀘사디아", "비프 부리또", "치킨 마크니 카레와 난"
   ];
 
