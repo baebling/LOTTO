@@ -4,6 +4,7 @@
   --bg: #0f172a;
   --card-bg: rgba(255, 255, 255, 0.05);
   --text: #f8fafc;
+  --accent: #fbbf24;
 }
 
 * {
@@ -31,7 +32,7 @@ body {
 
 header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 h1 {
@@ -50,6 +51,39 @@ h1 span {
 header p {
   color: #94a3b8;
   font-size: 1.1rem;
+}
+
+/* 오늘의 운세 스타일 */
+.fortune-card {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(217, 70, 239, 0.1));
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 30px;
+  text-align: center;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.fortune-title {
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.fortune-content {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .action-area {
@@ -77,10 +111,6 @@ button:hover {
   transform: translateY(-2px);
   background: #4338ca;
   box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.5);
-}
-
-button:active {
-  transform: translateY(0);
 }
 
 .btn-shine {
@@ -117,14 +147,8 @@ button:hover .btn-shine {
 }
 
 @keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .number-wrapper {
@@ -154,6 +178,7 @@ button:hover .btn-shine {
 
 @media (max-width: 600px) {
   h1 { font-size: 2.2rem; }
+  .fortune-content { font-size: 1.1rem; }
   .number-set {
     padding: 16px;
     gap: 10px;

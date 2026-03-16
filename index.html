@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Premium Lotto Generator</title>
+  <title>Premium Lotto & Fortune</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap" rel="stylesheet">
@@ -13,12 +13,17 @@
   <div class="container">
     <header>
       <h1>LOTTO <span>PREMIUM</span></h1>
-      <p>가장 높은 확률의 번호를 조합해 보세요</p>
+      <p>오늘의 운세와 함께 최적의 번호를 확인하세요</p>
     </header>
+
+    <div id="fortune-container" class="fortune-card" style="display: none;">
+      <div class="fortune-title">✨ 오늘의 운세</div>
+      <div id="fortune-text" class="fortune-content"></div>
+    </div>
     
     <div class="action-area">
       <button id="generate">
-        <span class="btn-text">번호 추천 받기 (6세트)</span>
+        <span class="btn-text">운세 확인 & 번호 추천</span>
         <span class="btn-shine"></span>
       </button>
     </div>
